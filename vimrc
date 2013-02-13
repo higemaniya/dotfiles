@@ -29,7 +29,7 @@ NeoBundle "thinca/vim-quickrun"
 NeoBundle "fuenor/qfixhowm"
 NeoBundle "fuenor/qfixgrep"
 NeoBundle "altercation/vim-colors-solarized"
-NeoBundle "Lokaltog/vim-powerline"
+"NeoBundle "Lokaltog/vim-powerline"
 NeoBundle "majutsushi/tagbar"
 
 syntax on
@@ -64,7 +64,7 @@ if !has('gui')
 	colorscheme solarized
 endif
 set laststatus=2
-"set statusline=%F%m%r%h%w\ %{fugitive#statusline()}%=%y\[%{&ff}]\[%{&fileencoding}][%Bh][%l/%L]
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}%=%y\[%{&ff}]\[%{&fileencoding}][%Bh][%l/%L]
 
 " === powerline
 let g:Powerline_symbols = 'unicode'
