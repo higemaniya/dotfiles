@@ -1,4 +1,4 @@
-path=(/{s,}bin /usr/{s,}bin /usr/games(N) /usr/pkg/{s,}bin(N) /usr/local/{s,}bin(N) $HOME/bin(N))
+path=(/{s,}bin /usr/{s,}bin /usr/games(N) /usr/pkg/{s,}bin(N) /opt/local/{s,}bin(N) /usr/local/{s,}bin(N) $HOME/.local/bin(N) $HOME/bin(N))
 typeset -U path
 
 export EDITOR=vim
@@ -13,7 +13,7 @@ bindkey -s '^z' '^[q %vim^m'
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
-zstyle ":vcs_info:git:*" check-for-changes true
+zstyle ":vcs_info:git:*" check-for-changes false
 zstyle ":vcs_info:git:*" formats "%s:%c%u|%b@%r"
 zstyle ":vcs_info:git:*" actionformats "%s!%a%b!%c|%b@%r"
 zstyle ":vcs_info:git:*" unstagedstr "*"
@@ -26,7 +26,8 @@ my_git_info_stash() {
 }
 my_vcs_info() {
 	vcs_info
-	echo $(my_git_info_stash)$vcs_info_msg_0_
+#	echo $(my_git_info_stash)$vcs_info_msg_0_
+	echo $vcs_info_msg_0_
 }
 setopt prompt_subst
 PROMPT='%B%n@%m%b%# '
@@ -41,7 +42,7 @@ setopt share_history
 
 setopt auto_cd
 setopt auto_pushd
-setopt correct
+#setopt correct
 setopt nolistbeep
 setopt list_packed
 
