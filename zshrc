@@ -1,4 +1,4 @@
-path=(/{s,}bin /usr/{s,}bin /usr/games(N) /usr/pkg/{s,}bin(N) /opt/local/{s,}bin(N) /usr/local/{s,}bin(N) $HOME/.local/bin(N) $HOME/bin(N))
+path=($HOME/.local/bin(N) $HOME/bin(N) /usr/pkg/{s,}bin(N) /opt/local/{s,}bin(N) /usr/local/{s,}bin(N) /{s,}bin /usr/{s,}bin /usr/games(N))
 typeset -U path
 
 export EDITOR=vim
