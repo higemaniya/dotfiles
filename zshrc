@@ -30,7 +30,8 @@ my_vcs_info() {
 	echo $vcs_info_msg_0_
 }
 setopt prompt_subst
-PROMPT='%B%n@%m%b%# '
+PROMPT='%B%m:%~%b%# '
+PROMPT2='%_%% '
 RPROMPT=$'$(my_vcs_info)'
 
 HISTFILE=~/.zsh_history
@@ -47,3 +48,7 @@ setopt nolistbeep
 setopt list_packed
 
 alias vi='vim'
+
+test -f $HOME/.rvm/scripts/rvm && source $HOME/.rvm/scripts/rvm && rvm reload > /dev/null
+
+which hub > /dev/null && eval "$(hub alias -s)"
